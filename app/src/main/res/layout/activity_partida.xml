@@ -1,0 +1,60 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@color/white"
+        app:title="@string/app_name"/>
+    <!-- Cantidad de movimientos que se fueron realizando durante el juego -->
+    <TextView
+        android:id="@+id/infoMovimientos"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textSize="30dp"
+        android:background="@color/white"
+        android:layout_alignTop="@+id/infoAciertos"
+        android:layout_toLeftOf="@+id/infoAciertos"/>
+    <!-- Cantidad de aciertos -->
+    <TextView
+        android:id="@+id/infoAciertos"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textSize="30dp"
+        android:background="@color/white"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"/>
+    <!-- Cantidad restante de barcos a encontrar -->
+    <TextView
+        android:id="@+id/infoRestantes"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textSize="30dp"
+        android:background="@color/white"
+        android:layout_alignTop="@+id/infoAciertos"
+        android:layout_toRightOf="@+id/infoAciertos"/>
+    <!-- Boton de reinicio -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reiniciar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="reiniciar"/>
+    <!-- Tablero -->
+    <GridLayout
+        android:id="@+id/tablero"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:columnCount="6"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+    </GridLayout>
+</RelativeLayout>
