@@ -1,6 +1,7 @@
 package com.example.minibatallanaval
 
 import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.Menu
@@ -40,6 +41,8 @@ class Partida : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_partida)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
 
         tablero = findViewById<GridLayout>(R.id.tablero)
         movimientos = findViewById<TextView>(R.id.infoMovimientos)
@@ -47,24 +50,6 @@ class Partida : AppCompatActivity() {
         restantes = findViewById<TextView>(R.id.infoRestantes)
         cargarTablero()
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
-        val menuHost: MenuHost = this
-        menuHost.addMenuProvider(object : MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(R.menu.menu_partida, menu)
-            }
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                return when (menuItem.itemId) {
-                    R.id.menuConfiguracion -> {
-                        finish()
-                        true
-                    }
-                    else -> false
-                }
-            }
-        }, this);
     }
 
     fun generarPosiciones(c : Int): List<Int>{
