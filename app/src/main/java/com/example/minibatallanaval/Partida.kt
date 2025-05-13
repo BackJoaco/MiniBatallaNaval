@@ -79,7 +79,7 @@ class Partida : AppCompatActivity() {
     fun falloDisparo(){
         val valor = movimientos.text.toString().toInt() + 1
         movimientos.text = valor.toString()
-        if (valor == 35 ) {
+        if (valor == 36 ) {
             deshabilitarTablero()
         }
     }
