@@ -1,6 +1,7 @@
 package com.example.minibatallanaval
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Resources
 import android.os.Bundle
@@ -49,7 +50,28 @@ class Partida : AppCompatActivity() {
         aciertos = findViewById<TextView>(R.id.infoAciertos)
         restantes = findViewById<TextView>(R.id.infoRestantes)
         cargarTablero()
-
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        val menuHost: MenuHost = this
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu : Menu, menuInflater : MenuInflater) {
+                menuInflater.inflate(R.menu.menu_partida, menu)
+            }
+            override fun onMenuItemSelected(menuItem : MenuItem) : Boolean {
+                return when (menuItem.itemId) {
+                    // boton para volver al menu principal
+                    R.id.menuAyuda -> {
+                        false
+                    }
+                    // boton de cerrar menu
+                    R.id.menuSalir -> {
+                        finish()
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, this);
     }
 
     fun generarPosiciones(c : Int): List<Int>{

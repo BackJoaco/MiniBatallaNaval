@@ -9,8 +9,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/toolbar"
         android:background="?attr/colorPrimary"
+        app:title="@string/app_name"
         app:titleTextColor="@color/white"
-        app:title="@string/app_name"/>
+        />
     <!-- Cantidad de movimientos que se fueron realizando durante el juego -->
     <TextView
         android:id="@+id/infoMovimientos"
