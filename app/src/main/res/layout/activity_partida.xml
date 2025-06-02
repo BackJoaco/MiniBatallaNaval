@@ -11,6 +11,10 @@
         android:background="?attr/colorPrimary"
         app:titleTextColor="@color/white"
         app:title="@string/app_name"/>
+<<<<<<< HEAD
+=======
+    <!-- Cantidad de movimientos que se fueron realizando durante el juego -->
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
     <TextView
         android:id="@+id/infoMovimientos"
         android:layout_width="wrap_content"
@@ -18,6 +22,7 @@
         android:textSize="20dp"
         android:layout_toRightOf="@+id/textoMovimientos"
         android:layout_alignBaseline="@+id/textoMovimientos" />
+<<<<<<< HEAD
     <TextView
         android:id="@+id/nombreJugador"
         android:layout_width="wrap_content"
@@ -29,13 +34,20 @@
         android:text="Jugador:" />
 
 
+=======
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
     <TextView android:id="@+id/textoMovimientos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+<<<<<<< HEAD
         android:layout_below="@id/nombreJugador"
         android:text="@string/movimientos"/>
 
+=======
+        android:layout_below="@+id/toolbar"
+        android:text="@string/movimientos"/>
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
     <TextView android:id="@+id/textoAciertos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,6 +60,10 @@
         android:textSize="20dp"
         android:layout_below="@+id/textoAciertos"
         android:text="@string/restantes"/>
+<<<<<<< HEAD
+=======
+    <!-- Cantidad de aciertos -->
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
     <TextView
         android:id="@+id/infoAciertos"
         android:layout_width="wrap_content"
@@ -55,7 +71,11 @@
         android:textSize="20dp"
         android:layout_toRightOf="@+id/textoAciertos"
         android:layout_alignBaseline="@+id/textoAciertos"/>
+<<<<<<< HEAD
 
+=======
+    <!-- Cantidad restante de barcos a encontrar -->
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
     <TextView
         android:id="@+id/infoRestantes"
         android:layout_width="wrap_content"
@@ -63,8 +83,13 @@
         android:textSize="20dp"
         android:layout_toRightOf="@+id/textoRestantes"
         android:layout_alignBaseline="@+id/textoRestantes"/>
+<<<<<<< HEAD
     <Button
         android:id="@+id/reiniciar"
+=======
+    <!-- Boton de reinicio -->
+    <Button
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reiniciar"
@@ -72,6 +97,7 @@
         android:layout_below="@+id/tablero"
         android:layout_marginTop="50dp"
         android:onClick="reiniciar"/>
+<<<<<<< HEAD
     <Button
         android:id="@+id/btnAyuda"
         android:layout_width="wrap_content"
@@ -83,6 +109,9 @@
         android:onClick="abrirAyuda" />
 
 
+=======
+    <!-- Tablero -->
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
     <GridLayout
         android:id="@+id/tablero"
         android:layout_height="wrap_content"

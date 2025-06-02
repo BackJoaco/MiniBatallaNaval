@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // MainActivity.kt
 package com.example.minibatallanaval
 
@@ -69,4 +70,25 @@ class MainActivity : AppCompatActivity() {
         val i = Intent(this, ayuda::class.java)
         startActivity(i)
     }
+=======
+package com.example.minibatallanaval
+
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+    }
+
+    fun iniciarPartida(view : View){
+        val i = Intent(this, Partida::class.java)
+        startActivity(i)
+    }
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
 }

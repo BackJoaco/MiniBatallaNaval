@@ -24,8 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".ayuda" android:exported="false" />
 
+=======
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
     </application>
 
 </manifest>

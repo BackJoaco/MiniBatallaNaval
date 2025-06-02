@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuConfiguracion"
+        android:title="Configurar tablero" >
+        <menu>
+            <item android:id="@+id/ancho"
+                android:title="Ancho"/>
+            <item android:id="@+id/alto"
+                android:title="Alto"/>
+        </menu>
+    </item>
+</menu>

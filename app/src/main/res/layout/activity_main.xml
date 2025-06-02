@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -84,3 +85,16 @@
         android:layout_centerHorizontal="true"
         android:onClick="abrirAyuda" />
 </RelativeLayout>
+=======
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Partida"
+        android:onClick="iniciarPartida"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
