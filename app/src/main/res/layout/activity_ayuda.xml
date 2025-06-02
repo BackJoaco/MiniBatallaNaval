@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/textoAyuda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:text="Bienvenido/a a Mini Batalla Naval \n\nEn este juego tenés que encontrar todos los barcos ocultos en el tablero antes de que se te terminen los movimientos. Es como el clásico juego de batalla naval, pero simplificado para que sea rápido y entretenido.\n\n¿Cómo se juega?\n1. En el menú principal, ingresás tu nombre.\n2. Elegís el tamaño del tablero (6x6, 8x8 o 10x10) tocando uno de los botones.\n3. Tocás “Iniciar partida” y arrancás el juego.\n\nObjetivo:\nTenés que tocar las casillas para encontrar los barcos escondidos. Cada toque cuenta como un movimiento. Si acertás, sumás un acierto. Si fallás, igual cuenta como movimiento.\n\nEl contador te muestra cuántos barcos te quedan por encontrar, cuántos movimientos hiciste y cuántos aciertos llevás.\n\nBotones:\n- Reiniciar: reinicia el juego con nuevos barcos.\n- Ayuda: abre esta pantalla.\n- Menú principal: vuelve al inicio para cambiar de nombre o tablero.\n\n¡Eso es todo! Probá diferentes tableros y tratá de ganar con la menor cantidad de movimientos posible. " />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar"
+        android:onClick="cerrarAyuda"
+        android:layout_below="@id/textoAyuda"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

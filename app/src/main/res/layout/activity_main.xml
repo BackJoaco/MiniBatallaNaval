@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tituloJuego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mini Batalla Naval"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+
+    <EditText
+        android:id="@+id/inputNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del jugador"
+        android:layout_below="@id/tituloJuego"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/labelTablero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccioná el tamaño del tablero"
+        android:layout_below="@id/inputNombre"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:id="@+id/layoutTamanios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelTablero"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn6x6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6x6"
+            android:onClick="seleccionarTamanio" />
+
+        <Button
+            android:id="@+id/btn8x8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8x8"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:onClick="seleccionarTamanio" />
+
+        <Button
+            android:id="@+id/btn10x10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10x10"
+            android:onClick="seleccionarTamanio" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Partida"
+        android:layout_below="@id/layoutTamanios"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="iniciarPartida" />
+
+    <Button
+        android:id="@+id/btnAyuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayuda"
+        android:layout_below="@id/btnIniciar"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="abrirAyuda" />
+</RelativeLayout>

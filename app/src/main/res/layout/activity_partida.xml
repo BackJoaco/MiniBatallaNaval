@@ -1,0 +1,94 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@color/white"
+        app:title="@string/app_name"/>
+    <TextView
+        android:id="@+id/infoMovimientos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_toRightOf="@+id/textoMovimientos"
+        android:layout_alignBaseline="@+id/textoMovimientos" />
+    <TextView
+        android:id="@+id/nombreJugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:text="Jugador:" />
+
+
+    <TextView android:id="@+id/textoMovimientos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@id/nombreJugador"
+        android:text="@string/movimientos"/>
+
+    <TextView android:id="@+id/textoAciertos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@+id/textoMovimientos"
+        android:text="@string/aciertos"/>
+    <TextView android:id="@+id/textoRestantes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@+id/textoAciertos"
+        android:text="@string/restantes"/>
+    <TextView
+        android:id="@+id/infoAciertos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_toRightOf="@+id/textoAciertos"
+        android:layout_alignBaseline="@+id/textoAciertos"/>
+
+    <TextView
+        android:id="@+id/infoRestantes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_toRightOf="@+id/textoRestantes"
+        android:layout_alignBaseline="@+id/textoRestantes"/>
+    <Button
+        android:id="@+id/reiniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reiniciar"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tablero"
+        android:layout_marginTop="50dp"
+        android:onClick="reiniciar"/>
+    <Button
+        android:id="@+id/btnAyuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayuda"
+        android:layout_below="@id/reiniciar"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="abrirAyuda" />
+
+
+    <GridLayout
+        android:id="@+id/tablero"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:columnCount="6"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+    </GridLayout>
+</RelativeLayout>
