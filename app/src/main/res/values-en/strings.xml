@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movimientos">Movements:</string>
+    <string name="aciertos">Hits:</string>
+    <string name="restantes">Remaining</string>
+    <string name="nombre_jugador_pista">Player name</string>
+    <string name="nombre_jugador">Player:</string>
+    <string name="texto_seleccion_tamano_tablero">Select board size</string>
+    <string name="iniciar_partida">Start game</string>
+    <string name="ayuda">Help</string>
+    <string name="texto_ayuda">Welcome to Mini Battleship.\n\nIn this game, you have to find all the hidden ships on the board before you run out of moves. It\'s like the classic Battleship game, but simplified to make it fast-paced and fun. \n\nHow to play? \n1. In the main menu, enter your name.\n2. Choose the board size (6x6, 8x8, or 10x10) by tapping one of the buttons.\n3. Tap \"Start Game\" and start the game.\n\nObjective:\nYou have to tap the squares to find the hidden ships. Each tap counts as a move. If you guess correctly, you get a hit. If you miss, it still counts as a move.\n\nThe counter shows you how many ships you have left to find, how many moves you made, and how many hits you have. \nButtons:\n- Restart: Restarts the game with new ships.\n- Help: Opens this screen.\n- Main Menu: Go back to the beginning to change your name or board.\n\nThat\'s it! Try different boards and try to win with as few moves as possible.</string>
+    <string name="cerrar">Close</string>
+    <string name="reiniciar">Restart</string>
+</resources>

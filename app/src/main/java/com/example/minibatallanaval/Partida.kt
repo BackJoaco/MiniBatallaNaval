@@ -26,17 +26,18 @@ class Partida : AppCompatActivity() {
     lateinit var restantes : TextView
     lateinit var movimientos : TextView
     lateinit var aciertos : TextView
+    lateinit var nombreView: TextView
     val botones = mutableListOf<Button>()
     var filas = 6
     var columnas = 6
     var totalBotones= 36
-    val displayMetrics = Resources.getSystem().displayMetrics
-    val screenWidth = displayMetrics.widthPixels
-    var botonSize = screenWidth / columnas - 10
+    var botonSize = 0
     var posBarcos = mutableListOf<Int>()
     var cantBarcos = 0
-
-
+    var nombreJugador = ""
+    var contadorMovimientos = 0
+    var contadorAciertos = 0
+    var barcosRestantes = 0  // Hay 15 variables
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,12 +45,26 @@ class Partida : AppCompatActivity() {
         setContentView(R.layout.activity_partida)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
+        // Observar el funcionamiento de esto
+        nombreJugador = intent.getStringExtra("nombre") ?: "Jugador"
+        filas = intent.getIntExtra("filas", 6)
+        columnas = intent.getIntExtra("columnas", 6)
+        totalBotones = filas * columnas
+
+        val displayMetrics = Resources.getSystem().displayMetrics
+        val screenWidth = displayMetrics.widthPixels
+        botonSize = screenWidth / columnas - 10
 
         tablero = findViewById<GridLayout>(R.id.tablero)
-        movimientos = findViewById<TextView>(R.id.infoMovimientos)
-        aciertos = findViewById<TextView>(R.id.infoAciertos)
-        restantes = findViewById<TextView>(R.id.infoRestantes)
+        movimientos = findViewById<TextView>(R.id.textoMovimientos)
+        aciertos = findViewById<TextView>(R.id.textoAciertos)
+        restantes = findViewById<TextView>(R.id.textoRestantes)
+        nombreView = findViewById(R.id.nombreJugador)
+        nombreView.text = "Jugador: $nombreJugador"
+
+        tablero.columnCount = columnas
         cargarTablero()
+
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         val menuHost: MenuHost = this
@@ -61,7 +76,9 @@ class Partida : AppCompatActivity() {
                 return when (menuItem.itemId) {
                     // boton para volver al menu principal
                     R.id.menuAyuda -> {
-                        false
+                        val i = Intent(this@Partida, Ayuda::class.java)
+                        startActivity(i)
+                        true
                     }
                     // boton de cerrar menu
                     R.id.menuSalir -> {
@@ -78,68 +95,119 @@ class Partida : AppCompatActivity() {
         return (0 until totalBotones).shuffled().take(c)
 
     }
+
     val listener = View.OnClickListener { v ->
         val boton = v as Button
         val pos = boton.text.toString().toInt() - 1
         boton.setBackgroundColor(disparar(pos))
         boton.isEnabled = false
     }
+
     fun deshabilitarTablero(){
         botones.forEach { it.isEnabled = false }
     }
+
     @SuppressLint("SetTextI18n")
     fun acertoDisparo(){
-        movimientos.text = (movimientos.text.toString().toInt() +1).toString()
-        aciertos.text = (aciertos.text.toString().toInt() +1).toString()
-        val cant = restantes.text.toString()
-        restantes.text = (cant.toInt() -1).toString()
-        if (cant == "1") {
+        contadorMovimientos++
+        contadorAciertos++
+        barcosRestantes--
+
+        movimientos.text = "Movimientos: $contadorMovimientos"
+        aciertos.text = "Aciertos: $contadorAciertos"
+        restantes.text = "Barcos restantes: $barcosRestantes"
+
+        if (barcosRestantes == 0) {
             deshabilitarTablero()
+            mostrarEstadisticas()
         }
     }
+
     @SuppressLint("SetTextI18n")
     fun falloDisparo(){
-        val valor = movimientos.text.toString().toInt() + 1
-        movimientos.text = valor.toString()
-        if (valor == 36 ) {
+        contadorMovimientos++
+        movimientos.text = "Movimientos: $contadorMovimientos"
+
+        if (contadorMovimientos == totalBotones) {
             deshabilitarTablero()
         }
     }
 
     fun disparar(pos : Int): Int{
-        if (posBarcos.contains(pos)) {
+        return if (posBarcos.contains(pos)) {
             acertoDisparo()
-            return ContextCompat.getColor(this, R.color.brown) // hay barco
+            ContextCompat.getColor(this, R.color.brown) // hay barco
         } else {
             falloDisparo()
-            return ContextCompat.getColor(this, R.color.blue) // agua
+            ContextCompat.getColor(this, R.color.blue) // agua
         }
     }
+
     fun cargarTablero(){
         tablero.removeAllViews()
         botones.clear()
+
         cantBarcos = (10..15).random()
         posBarcos = generarPosiciones(cantBarcos).toMutableList()
-        for (i in 1 .. 36) {
+
+        contadorMovimientos = 0
+        contadorAciertos = 0
+        barcosRestantes = cantBarcos
+
+        movimientos.text = "Movimientos: 0"
+        aciertos.text = "Aciertos: 0"
+        restantes.text = "Barcos restantes: $barcosRestantes"
+
+        for (i in 1..totalBotones) {
             val boton = Button(this)
             boton.text = i.toString()
-
-
             val params = GridLayout.LayoutParams()
             params.width = botonSize
             params.height = botonSize
             boton.layoutParams = params
             boton.setBackgroundResource(R.drawable.boton_cuadrado)
             boton.setOnClickListener(listener)
-
             botones.add(boton)
             tablero.addView(boton)
         }
-        movimientos.text = "0"
-        aciertos.text = "0"
-        restantes.text = "$cantBarcos"
     }
+
     fun reiniciar(view : View){
         cargarTablero()
+    }
+
+    fun abrirAyuda(view: View) {
+        val i = Intent(this, Ayuda::class.java)
+        startActivity(i)
+    }
+
+    fun mostrarEstadisticas() {
+        val builder = android.app.AlertDialog.Builder(this)
+        builder.setTitle("¡Partida terminada!")
+
+        val mensaje = "Jugador: $nombreJugador\n" +
+                "Movimientos: $contadorMovimientos\n" +
+                "Aciertos: $contadorAciertos\n" +
+                "Porcentaje de aciertos: ${calcularPorcentaje()}%"
+
+        builder.setMessage(mensaje)
+
+        builder.setPositiveButton("Aceptar") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("Reiniciar partida") { _, _ ->
+            cargarTablero()
+        }
+
+        builder.show()
+    }
+
+    fun calcularPorcentaje(): Int {
+        return if (contadorMovimientos > 0) {
+            (contadorAciertos * 100) / contadorMovimientos
+        } else {
+            0
+        }
     }
 }

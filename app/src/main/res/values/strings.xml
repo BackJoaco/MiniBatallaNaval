@@ -1,6 +1,33 @@
 <resources>
-    <string name="app_name">MiniBatallaNaval</string>
+    <string name="app_name" translatable="false">Mini Batalla Naval</string>
     <string name="movimientos">Movimientos: </string>
     <string name="aciertos">Aciertos: </string>
     <string name="restantes">Barcos restantes: </string>
+    <string name="nombre_jugador_pista">Nombre del jugador</string>
+    <string name="nombre_jugador">Jugador:</string>
+    <string name="texto_seleccion_tamano_tablero">Seleccioná el tamaño del tablero</string>
+    <string name="SeisXSeis" translatable="false">6x6</string>
+    <string name="OchoXOcho" translatable="false">8x8</string>
+    <string name="DiezXDiez" translatable="false">10x10</string>
+    <string name="iniciar_partida">Iniciar partida</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="texto_ayuda">Bienvenido/a a Mini Batalla Naval\n\n
+        En este juego tenés que encontrar todos los barcos ocultos en el tablero
+        antes de que se te terminen los movimientos. Es como el clásico juego de batalla naval,
+        pero simplificado para que sea rápido y entretenido.\n\n
+        ¿Cómo se juega?\n
+        1. En el menú principal, ingresás tu nombre.\n
+        2. Elegís el tamaño del tablero (6x6, 8x8 o 10x10) tocando uno de los botones.\n
+        3. Tocás “Iniciar partida” y arrancás el juego.\n\n
+        Objetivo:\n
+        Tenés que tocar las casillas para encontrar los barcos escondidos. Cada toque cuenta como un movimiento.
+        Si acertás, sumás un acierto. Si fallás, igual cuenta como movimiento.\n\n
+        El contador te muestra cuántos barcos te quedan por encontrar, cuántos movimientos hiciste y cuántos aciertos llevás.\n\n
+        Botones:\n
+        - Reiniciar: reinicia el juego con nuevos barcos.\n
+        - Ayuda: abre esta pantalla.\n
+        - Menú principal: vuelve al inicio para cambiar de nombre o tablero.\n\n
+        ¡Eso es todo! Probá diferentes tableros y tratá de ganar con la menor cantidad de movimientos posible.</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="reiniciar">Reiniciar</string>
 </resources>
