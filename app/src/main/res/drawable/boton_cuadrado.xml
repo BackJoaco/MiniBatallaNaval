@@ -3,6 +3,12 @@
     <solid android:color="#4C3D62" />
     <stroke
         android:width="3dp"
+<<<<<<< HEAD
+        android:color="#CAC7C7" />
+    <corners android:radius="3dp"/>
+</shape>
+=======
         android:color="#CAC7C7" /> <!-- Color del borde -->
     <corners android:radius="3dp"/>
 </shape>
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069

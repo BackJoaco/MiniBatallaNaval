@@ -19,5 +19,11 @@ dependencyResolutionManagement {
     }
 }
 
+<<<<<<< HEAD
+rootProject.name = "minibatallanaval"
+include(":app")
+ 
+=======
 rootProject.name = "MiniBatallaNaval"
 include(":app")
+>>>>>>> 1f9fed1f1996a27acb2cf8ecb613ca9575b70069
